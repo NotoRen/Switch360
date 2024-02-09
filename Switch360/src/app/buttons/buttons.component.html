@@ -1,0 +1,26 @@
+
+    <div class="btn-group btn-group-lg center large" role="group" aria-label="Basic example">
+      <button [ngClass]="{' btn-outline-primary ':selected!='inserisci',' btn-primary ':selected=='inserisci'}"
+      class="ciccio btn"
+        aria-current="page"
+        (click)="onSelect('inserisci')"
+      >
+        Inserisci
+      </button>
+      <button
+      [ngClass]="{' btn-outline-primary ':selected!='modifica',' btn-primary ':selected=='modifica'}"
+      class="ciccio btn"
+        aria-current="page"
+        (click)="onSelect('modifica')"
+      >
+        Modifica
+      </button>
+      <button
+      [ngClass]="{' btn-outline-primary ':selected!='visualizza','  btn-primary ':selected=='visualizza'}"
+      class="ciccio btn"
+        aria-current="page"
+        (click)="onSelect('visualizza')"
+      >
+        Visualizza
+      </button>
+    </div>
