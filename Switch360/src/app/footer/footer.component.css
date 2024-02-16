@@ -1,0 +1,7 @@
+div{
+    height: 6vh;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

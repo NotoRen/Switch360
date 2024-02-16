@@ -1,4 +1,5 @@
-<app-buttons (featureSelected)="onNavigate($event)"></app-buttons>
+<div><app-buttons (featureSelected)="onNavigate($event)"></app-buttons>
 <app-inserisci *ngIf="visInserisci"></app-inserisci>
 <app-modifica *ngIf="visModifica"></app-modifica>
 <app-visualizza *ngIf="visVisualizza"></app-visualizza>
+</div>

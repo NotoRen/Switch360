@@ -1,0 +1,10 @@
+.separatore{
+    background-color: black;
+    height: auto;
+    width: 3px !important;
+}
+.row{
+    height: 73vh;
+    padding: auto;
+    margin: auto;
+}
