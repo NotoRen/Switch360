@@ -1,7 +1,12 @@
 div{
     height: 6vh;
-    background-color: aqua;
+    background-color: #264D4C;
     position: absolute;
     bottom: 0;
     width: 100%;
+    text-align: center;
+}
+div>p{
+    padding-top: 15px;
+    color: whitesmoke;
 }

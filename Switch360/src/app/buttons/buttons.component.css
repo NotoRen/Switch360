@@ -1,16 +1,42 @@
-.large{
-    width: 100%;
-    padding: auto;
-    
+.large {
+  width: 100%;
+  padding: auto;
 }
 
-.ciccio{
+.ciccio {
+  width: 34%;
+  height: 12vh;
+  border-radius: 0%;
+  font-size: 36pt;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: black solid 1px;
+  letter-spacing: 3px;
+}
+
+@media (width<740px) {
+  .ciccio {
     width: 34%;
     height: 12vh;
     border-radius: 0%;
-    font-size: 36pt;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24pt;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     border: black solid 1px;
     letter-spacing: 3px;
+  }
 }
+
+@media (width<560px) {
+    .ciccio {
+        padding: 40px;
+      width: 34%;
+      height: 12vh;
+      border-radius: 0%;
+      font-size: 12pt;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      border: black solid 1px;
+      letter-spacing: 3px;
+    }
+  }
+  
+
 
