@@ -11,6 +11,13 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border: black solid 1px;
   letter-spacing: 3px;
+  padding-top:16px ;
+  padding-bottom: 0px;
+}
+
+.btn-outline-info{
+  background-color: #17a2b8;
+  color: white;
 }
 
 @media (width<740px) {

@@ -26,3 +26,11 @@
 .pad{
     padding-top: 15px;
 }
+.contenuto{
+    height: 73vh;
+    width: 50%;
+    margin-left: 25%;
+    border: black 3px solid;
+    border-radius: 5%;
+    background-color: white;
+}
