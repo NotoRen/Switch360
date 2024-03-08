@@ -4,17 +4,22 @@ import { InserisciComponent } from './main/inserisci/inserisci.component';
 import { ModificaComponent } from './main/modifica/modifica.component';
 import { VisualizzaComponent } from './main/visualizza/visualizza.component';
 import { AppComponent } from './app.component';
+import { ContentsComponent } from './main/contents/contents.component';
+
 
 const routes: Routes = [{
   path: '',
-  redirectTo: '/inserisci',
+  redirectTo: '/inserisci/box',
   pathMatch: 'full'
 },
 {
   path: 'inserisci', // senza slash !
   component: InserisciComponent,
   children: [
-    { path: 'box', component: InserisciComponent },
+    { path: ':box', component: ContentsComponent },
+    { path: ':vlan', component: ContentsComponent },
+    { path: ':porte', component: ContentsComponent },
+    { path: ':switch', component: ContentsComponent },
 
     ]
 },{
@@ -37,4 +42,7 @@ const routes: Routes = [{
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+
+}

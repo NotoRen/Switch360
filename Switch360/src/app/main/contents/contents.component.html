@@ -1,0 +1,122 @@
+<div *ngIf="currentForm == 'box'">
+  <form>
+    <div class="form-group" style="text-align: left !important">
+      <label for="boxNome">Nome box</label>
+      <input
+        type="text"
+        class="form-control black-border"
+        id="boxNome"
+        placeholder="Inserire nome box"
+      />
+    </div>
+    <div class="form-group" style="text-align: left !important">
+      <label for="descBox">Descrizione</label>
+      <textarea
+        class="form-control black-border"
+        id="descBox"
+        rows="13"
+        placeholder="Inserire descrizione box"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+      Annulla
+    </button>
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+      Inserisci
+    </button>
+  </form>
+</div>
+
+<div *ngIf="currentForm == 'vlan'">
+  <form>
+    <div class="form-group" style="text-align: left !important">
+      <label for="vlanNome">Nome vlan</label>
+      <input
+        type="text"
+        class="form-control black-border"
+        id="vlanNome"
+        placeholder="Inserire nome vlan"
+      />
+    </div>
+    <div class="form-group" style="text-align: left !important">
+      <label for="vlanNome">Numero vlan</label>
+      <input
+        type="number"
+        class="form-control black-border"
+        id="vlanNome"
+        min="1"
+        max="4096"
+        placeholder="Inserire nome vlan"
+      />
+    </div>
+    <div class="form-group" style="text-align: left !important">
+      <label for="vlanNome">Colore vlan</label>
+      <input
+        type="color"
+        class="form-control black-border"
+        id="vlanNome"
+        min="1"
+        max="4096"
+        placeholder="Inserire nome vlan"
+      />
+    </div>
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+      Annulla
+    </button>
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+      Inserisci
+    </button>
+  </form>
+</div>
+
+<div *ngIf="currentForm == 'porte'">
+  <form>
+    <div class="row" style="text-align: left !important">
+      <div class="col">
+        <label>Tipologia porta</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+        >
+          <option>Fibra ottica</option>
+          <option>Rame</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>Velocità cavo</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+        >
+          <option>FastEthernet</option>
+          <option>GigaEthernet</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div class="row form-group" style="text-align: left !important">
+      <div class="col">
+        <label>Colore porta</label>
+        <select class="form-control black-border">
+          <option>Rosso</option>
+          <option>Arancione</option>
+          <option>Verde</option>
+          <option>Blu</option>
+          <option>Viola</option>
+          <option>Giallo</option>
+          <option>Rosa</option>
+          <option>Azzurro</option>
+          <option>Bianco</option>
+          <option>Nero</option>
+          <option>Grigio</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+      Annulla
+    </button>
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+      Inserisci
+    </button>
+  </form>
+</div>

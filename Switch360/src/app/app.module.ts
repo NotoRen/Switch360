@@ -10,6 +10,7 @@ import { ModificaComponent } from './main/modifica/modifica.component';
 import { VisualizzaComponent } from './main/visualizza/visualizza.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContentsComponent } from './main/contents/contents.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     ModificaComponent,
     VisualizzaComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ContentsComponent
   ],
   imports: [
     BrowserModule,
