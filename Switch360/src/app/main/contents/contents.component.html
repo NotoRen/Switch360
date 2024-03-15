@@ -120,3 +120,57 @@
     </button>
   </form>
 </div>
+
+<div *ngIf="currentForm == 'switch'">
+  <form>
+    <div class="row" style="text-align: left !important" >
+      <div class="col center">
+        Numero di porte:
+        <input name="nPorte" id="nPorte24" type="radio" textContent="24" checked=true (click)="portChange(24)">
+        <label id="nPorte24">24</label>
+        <input name="nPorte" id="nPorte48" type="radio"  textContent="48" (click)="portChange(48)">
+        <label id="nPorte48">48</label>
+      </div>
+    </div>
+    <br />
+    <div class="row form-group" style="text-align: left !important">
+      <div class="col">
+        <table>
+          <tr>
+            <span *ngFor="let port of ports;index as i;">
+            <td *ngIf="i<12" (click)="selectPort(i)">1/{{port.number}}</td>
+            </span>
+          </tr>
+          <tr>
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i<12">{{port.vlan}}</td>
+              </span>
+          </tr>
+          <tr>
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i>=12&&i<24">1/{{port.number}}</td>
+              </span>
+          </tr>
+          <tr>
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i>=12&&i<24">{{port.vlan}}</td>
+              </span>
+          </tr>
+
+          
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+      Annulla
+    </button>
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+      Inserisci
+    </button>
+  </form>
+</div>
