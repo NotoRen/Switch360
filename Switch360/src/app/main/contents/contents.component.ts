@@ -32,8 +32,12 @@ export class ContentsComponent {
     for(let i=0;i<this.nPort;i++){
       let port=new PortModel("fastEthernet","white",i+1)
       this.ports?.push(port)
-      console.log(this.ports)
+      //console.log(this.ports)
     }
-    console.log(this.ports)
+    //console.log(this.ports)
+  }
+
+  selectPort(port:any) {
+    
   }
 }

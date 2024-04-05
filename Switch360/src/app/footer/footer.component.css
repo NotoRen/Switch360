@@ -1,12 +1,11 @@
-div{
-    height: 6vh;
+footer{
+    height: 5.5vh;
     background-color: #264D4C;
-    position: absolute;
-    bottom: 0;
+    
     width: 100%;
     text-align: center;
 }
-div>p{
+footer>p{
     padding-top: 15px;
     color: whitesmoke;
 }

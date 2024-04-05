@@ -1,19 +1,13 @@
 
     <div class="btn-group btn-group-lg center large" role="group" aria-label="Basic example">
       <a routerLink="/inserisci/box" (click)="changeColor('inserisci')" [ngClass]="{'btn-outline-info': currentButton=='inserisci'}"
-      class="ciccio btn"
-
-      >
+      class="ciccio btn">
         Inserisci
     </a>
-      <a routerLink="/modifica" (click)="changeColor('modifica')"  class="ciccio btn" [ngClass]="{'btn-outline-info': currentButton=='modifica'}"
-
-      >
+      <a routerLink="/modifica" (click)="changeColor('modifica')"  class="ciccio btn" [ngClass]="{'btn-outline-info': currentButton=='modifica'}">
         Modifica
   </a>
-      <a routerLink="/visualizza" (click)="changeColor('visualizza')" class="ciccio btn" [ngClass]="{'btn-outline-info': currentButton=='visualizza'}"
-      
-      >
+      <a routerLink="/visualizza" (click)="changeColor('visualizza')" class="ciccio btn" [ngClass]="{'btn-outline-info': currentButton=='visualizza'}">
         Visualizza
 </a>
     </div>

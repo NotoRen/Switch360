@@ -5,14 +5,14 @@
 
 .ciccio {
   width: 34%;
-  height: 12vh;
+  /*height: 12vh;*/
   border-radius: 0%;
   font-size: 36pt;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border: black solid 1px;
   letter-spacing: 3px;
-  padding-top:16px ;
-  padding-bottom: 0px;
+  padding-top:8px ;
+  padding-bottom: 8px;
 }
 
 .btn-outline-info{
@@ -23,7 +23,7 @@
 @media (width<740px) {
   .ciccio {
     width: 34%;
-    height: 12vh;
+    /*height: 12vh;*/
     border-radius: 0%;
     font-size: 24pt;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -34,9 +34,9 @@
 
 @media (width<560px) {
     .ciccio {
-        padding: 40px;
+      
       width: 34%;
-      height: 12vh;
+      /*height: 12vh;*/
       border-radius: 0%;
       font-size: 12pt;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
