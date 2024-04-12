@@ -13,8 +13,6 @@ import { VlanModel } from '../../models/vlan-model';
 })
 export class ContentsComponent {
   nPort:number=24
-  numeroPorta:string="1/1"
-  velocitaPorta:string="FastEthernet"
   vlans:VlanModel[]=[{
     name: 'Base',
     number: 10,
@@ -37,19 +35,47 @@ export class ContentsComponent {
     color: "rgb(90,87,43)",
   }]
   
+  selectedVlan:VlanModel=this.vlans[0];
 
   constructor(private router: Router,private route:ActivatedRoute) {}
 
   currentForm:string="box"
 
-  
+  ports:PortModel[]=[]
 
-  
-
-  ports?:PortModel[]=[]
+  selectedPort:PortModel=new PortModel("1",this.vlans[1],1)
 
   portChange(n:number){
     this.nPort=n;
+    this.generaPorte()
+  }
+
+  generaPorte(){
+    if(this.nPort!=this.ports.length){
+      if(this.nPort>this.ports.length){
+        for(let i=this.ports.length;i<this.nPort;i++){
+          let vlan=this.vlans[0]
+          let port=new PortModel("FastEthernet",vlan,i+1)
+          this.ports?.push(port)
+          if(i==0){
+            this.selectedPort=port
+          } 
+      }
+    }else{
+      for(let i=this.ports.length;i>this.nPort;i--){
+
+        this.ports?.pop()
+    }
+  }
+    }
+  }
+
+  changeVlan(){
+    let i=this.ports?.indexOf(this.selectedPort)
+    this.selectedPort.vlan=this.selectedVlan
+    console.log(i,this.nPort)
+    console.log(this.selectedPort)
+    
   }
 
   ngOnInit(){
@@ -58,19 +84,13 @@ export class ContentsComponent {
           this.currentForm=params[element]
         }
     })
-    let vlan=new VlanModel("Base","rgb(112,112,112)",10)
-    for(let i=0;i<this.nPort;i++){
-      
-      let port=new PortModel("FastEthernet",vlan,i+1)
-      this.ports?.push(port)
+    
+      this.generaPorte()
       //console.log(this.ports)
     }
-    //console.log(this.ports)
-  }
 
   selectPort(i:any){
-    this.numeroPorta="1/"+this.ports![i].number.toString()
-    this.velocitaPorta=this.ports![i].speed
-    console.log(this.ports![i].speed)
+    this.selectedPort=this.ports[i]
+    this.selectedVlan=this.selectedPort.vlan
   }
 }

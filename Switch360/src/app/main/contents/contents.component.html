@@ -160,6 +160,26 @@
               <td *ngIf="i>=12&&i<24"[ngStyle]="{'backgroundColor': port.vlan.color}"></td>
               </span>
           </tr>
+          <tr *ngIf="nPort==48">
+            <span *ngFor="let port of ports;index as i;">
+            <td *ngIf="i>=24&&i<36" (click)="selectPort(i)">1/{{port.number}}</td>
+            </span>
+          </tr>
+          <tr *ngIf="nPort==48">
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i>=24&&i<36" [ngStyle]="{'backgroundColor': port.vlan.color}"></td>
+              </span>
+          </tr>
+          <tr *ngIf="nPort==48">
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i>=36&&i<48" (click)="selectPort(i)">1/{{port.number}}</td>
+              </span>
+          </tr>
+          <tr *ngIf="nPort==48">
+            <span *ngFor="let port of ports;index as i;">
+              <td *ngIf="i>=36&&i<48"[ngStyle]="{'backgroundColor': port.vlan.color}"></td>
+              </span>
+          </tr>
 
           
         </table>
@@ -171,21 +191,22 @@
       <input 
         type="text"
         class="form-control black-border"
-        id="numeroPorta" [(ngModel)]="numeroPorta" name="numeroPorta">
+        id="numeroPorta" [(ngModel)]="selectedPort.number" name="numeroPorta">
         <label for="velocitaPorta">Velocità porta</label>
       <select 
         class="form-control black-border"
-        id="velocitaPorta" [(ngModel)]="velocitaPorta" name="velocitaPorta">
+        id="velocitaPorta" [(ngModel)]="selectedPort.speed" name="velocitaPorta">
       <option>FastEthernet</option>
       <option>GigaEthernet</option>
       </select> 
       <label for="vlanPorta">Vlan porta</label>
-      <select 
+      <select [(ngModel)]="selectedVlan" (click)="changeVlan()"
         class="form-control black-border"
         id="vlanPorta" name="vlanPorta">
-      <option *ngFor="let vlan of vlans" style="background-color: black;">{{vlan.name}}-{{vlan.number}}  <i class="bi bi-square-fill"></i></option>
+      <option *ngFor="let vlan of vlans" [ngValue]="vlan">{{vlan.name}}-{{vlan.number}} </option>
 
       </select> 
+      <i class="bi bi-square-fill" [ngStyle]="{'color':selectedVlan?.color}"></i>
       </div>
     </div>
     <button type="submit" class="btn btn-danger mb-2 box-button black-border">

@@ -34,3 +34,15 @@ option span{
     padding: 5px; 
     border:1px black solid;
 }
+
+select:last-of-type{
+    width: 95%;
+    display: inline-block;
+    float: left;
+    
+}
+
+i{
+    float: right; 
+    font-size: 20pt;
+}

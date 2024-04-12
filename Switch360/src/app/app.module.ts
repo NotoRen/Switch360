@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentsComponent } from './main/contents/contents.component';
 import { FormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     VisualizzaComponent,
     NavbarComponent,
     FooterComponent,
-    ContentsComponent
+    ContentsComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
