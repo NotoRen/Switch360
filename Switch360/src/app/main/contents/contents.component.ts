@@ -43,7 +43,7 @@ export class ContentsComponent {
 
   ports:PortModel[]=[]
 
-  selectedPort:PortModel=new PortModel("1",this.vlans[1],1)
+  selectedPort:PortModel=new PortModel("1",this.vlans[1],"0/1")
 
   portChange(n:number){
     this.nPort=n;
@@ -55,7 +55,9 @@ export class ContentsComponent {
       if(this.nPort>this.ports.length){
         for(let i=this.ports.length;i<this.nPort;i++){
           let vlan=this.vlans[0]
-          let port=new PortModel("FastEthernet",vlan,i+1)
+          let port=new PortModel("FastEthernet",vlan,'')
+          if(i<24)port.number="0/"+(i+1);
+          else port.number="1/"+(i-23);
           this.ports?.push(port)
           if(i==0){
             this.selectedPort=port

@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentsComponent } from './main/contents/contents.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { HighlightDirective } from './shared/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     NavbarComponent,
     FooterComponent,
     ContentsComponent,
-    DropdownDirective
+    DropdownDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -140,9 +140,9 @@
     <div class="row form-group" style="text-align: left !important">
       <div class="col">
         <table>
-          <tr>
+          <tr >
             <span *ngFor="let port of ports;index as i;">
-            <td *ngIf="i<12" (click)="selectPort(i)">1/{{port.number}}</td>
+            <td *ngIf="i<12" (click)="selectPort(i)" [ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
             </span>
           </tr>
           <tr>
@@ -152,7 +152,7 @@
           </tr>
           <tr>
             <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=12&&i<24" (click)="selectPort(i)">1/{{port.number}}</td>
+              <td *ngIf="i>=12&&i<24" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
               </span>
           </tr>
           <tr>
@@ -162,7 +162,7 @@
           </tr>
           <tr *ngIf="nPort==48">
             <span *ngFor="let port of ports;index as i;">
-            <td *ngIf="i>=24&&i<36" (click)="selectPort(i)">1/{{port.number}}</td>
+            <td *ngIf="i>=24&&i<36" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
             </span>
           </tr>
           <tr *ngIf="nPort==48">
@@ -172,7 +172,7 @@
           </tr>
           <tr *ngIf="nPort==48">
             <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=36&&i<48" (click)="selectPort(i)">1/{{port.number}}</td>
+              <td *ngIf="i>=36&&i<48" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
               </span>
           </tr>
           <tr *ngIf="nPort==48">
