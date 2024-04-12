@@ -15,7 +15,6 @@
     border-collapse:collapse;
     border-radius: 0;
     margin-bottom: 12px;
-    border:0px;
 }
 .ciccio{
     background-color: #60cfeb;
@@ -27,8 +26,12 @@
     color: rgb(24, 24, 24);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /*border: black solid 1px;*/
-    border:0px;
+    border:1px black solid;
+    border-bottom:0px ;
     letter-spacing: 2px;
+}
+.ciccio:nth-child(4){
+    border-bottom: 1px solid black;
 }
 .ciccio:hover{
     background-color:  rgb(222, 239, 255);

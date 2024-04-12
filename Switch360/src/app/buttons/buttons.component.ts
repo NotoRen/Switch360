@@ -13,6 +13,9 @@ export class ButtonsComponent {
   ngOnInit(){
     console.log();
     this.currentButton=window.location.href.split('/')[3]
+    if(this.currentButton==""){
+      this.currentButton="inserisci"
+    }
   }
 
   changeColor(select:string){

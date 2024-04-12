@@ -1,9 +1,11 @@
+import { VlanModel } from "./vlan-model";
+
 export class PortModel {
     public id?:string;
     public number:number;
     public speed:string;
-    public vlan:string;
-    constructor(s:string,v:string,n:number){
+    public vlan:VlanModel;
+    constructor(s:string,v:VlanModel,n:number){
         this.number=n;
         this.speed=s;
         this.vlan=v;
