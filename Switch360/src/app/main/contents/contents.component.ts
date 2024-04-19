@@ -1,98 +1,155 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PortModel } from '../../models/port-model';
 import { VlanModel } from '../../models/vlan-model';
-
+import { SwitchService } from '../../services/switch.service';
 
 @Component({
   selector: 'app-contents',
   templateUrl: './contents.component.html',
-  styleUrls: ['./contents.component.css']
+  styleUrls: ['./contents.component.css'],
 })
 export class ContentsComponent {
-  nPort:number=24
-  vlans:VlanModel[]=[{
-    name: 'Base',
-    number: 10,
-    color: "rgb(112,112,112)",
-  },{
-    name: 'Base1',
-    number: 11,
-    color: "rgb(10,112,35)",
-  },{
-    name: 'Base2',
-    number: 12,
-    color: "rgb(112,56,76)",
-  },{
-    name: 'Base3',
-    number: 13,
-    color: "rgb(87,21,112)",
-  },{
-    name: 'Base4',
-    number: 14,
-    color: "rgb(90,87,43)",
-  }]
-  
-  selectedVlan:VlanModel=this.vlans[0];
+  constructor(
+    private route: ActivatedRoute,
+    public switchService: SwitchService
+  ) {}
 
-  constructor(private router: Router,private route:ActivatedRoute) {}
+  currentForm: string = 'box';
 
-  currentForm:string="box"
+  //#region Box
+  nomeBox: string = '';
+  descrizioneBox: string = '';
 
-  ports:PortModel[]=[]
-
-  selectedPort:PortModel=new PortModel("1",this.vlans[1],"0/1")
-
-  portChange(n:number){
-    this.nPort=n;
-    this.generaPorte()
+  inserisciBox() {
+    let box: any = { nome: this.nomeBox, descrizione: this.descrizioneBox };
+    this.switchService.box.push(box);
+    this.annullaBox();
   }
 
-  generaPorte(){
-    if(this.nPort!=this.ports.length){
-      if(this.nPort>this.ports.length){
-        for(let i=this.ports.length;i<this.nPort;i++){
-          let vlan=this.vlans[0]
-          let port=new PortModel("FastEthernet",vlan,'')
-          if(i<24)port.number="0/"+(i+1);
-          else port.number="1/"+(i-23);
-          this.ports?.push(port)
-          if(i==0){
-            this.selectedPort=port
-          } 
-      }
-    }else{
-      for(let i=this.ports.length;i>this.nPort;i--){
-
-        this.ports?.pop()
-    }
-  }
-    }
+  annullaBox() {
+    this.nomeBox = '';
+    this.descrizioneBox = '';
   }
 
-  changeVlan(){
-    let i=this.ports?.indexOf(this.selectedPort)
-    this.selectedPort.vlan=this.selectedVlan
-    console.log(i,this.nPort)
-    console.log(this.selectedPort)
-    
+  //#endregion
+
+  //#region Vlan
+
+  nomeVlan: string = '';
+  numeroVlan: number = 1;
+  coloreVlan: string = '#FFFFFF';
+
+  inserisciVlan() {
+    let vlan: VlanModel = {
+      name: this.nomeVlan,
+      number: this.numeroVlan,
+      color: this.coloreVlan,
+    };
+    this.switchService.vlan.push(vlan);
+    this.annullaVlan();
   }
 
-  ngOnInit(){
-    this.route.params.subscribe((params:Params)=>{
-      for(let element in params){
-          this.currentForm=params[element]
-        }
-    })
-    
+  annullaVlan() {
+    this.nomeVlan = '';
+    this.numeroVlan = 1;
+    this.coloreVlan = '#FFFFFF';
+  }
+
+  //#endregion
+
+  //#region Porta
+
+  tipoPorta: string = 'Rame';
+  velocitaCavo: string = 'FastEthernet';
+  colorePorta: string = 'Rosso';
+
+  inserisciPorta() {
+    let porta: any = {
+      tipo: this.tipoPorta,
+      velocita: this.velocitaCavo,
+      colore: this.colorePorta,
+    };
+    this.switchService.porte.push(porta);
+    this.annullaPorta();
+  }
+
+  annullaPorta() {
+    this.tipoPorta = 'Rame';
+    this.velocitaCavo = 'FastEthernet';
+    this.colorePorta = 'Rosso';
+  }
+
+  //#endregion
+
+  //#region Switch
+  inserisciSwitch(){
+      this.switchService.switch=this.ports
+  }
+
+  annullaSwitch(){
+      this.ports=[]
       this.generaPorte()
-      //console.log(this.ports)
-    }
+  }
+  
+  //#endregion
+  nPort: number = 24;
+  selectedVlan: VlanModel = this.switchService.vlan[0];
 
-  selectPort(i:any){
-    this.selectedPort=this.ports[i]
-    this.selectedVlan=this.selectedPort.vlan
+  
+
+  ports: PortModel[] = [];
+
+  selectedPort: PortModel = new PortModel('1', this.switchService.vlan[1], '0/1');
+
+  portChange(n: number) {
+    this.nPort = n;
+    this.generaPorte();
+  }
+
+  generaPorte() {
+    if (this.nPort != this.ports.length) {
+      if (this.nPort > this.ports.length) {
+        for (let i = this.ports.length; i < this.nPort; i++) {
+          let vlan = this.switchService.vlan[0];
+          let port = new PortModel('FastEthernet', vlan, '');
+          if (i < 24) port.number = '0/' + (i + 1);
+          else port.number = '1/' + (i - 23);
+          this.ports?.push(port);
+          if (i == 0) {
+            this.selectedPort = port;
+          }
+        }
+      } else {
+        for (let i = this.ports.length; i > this.nPort; i--) {
+          this.ports?.pop();
+        }
+      }
+    }
+  }
+
+  changeVlan() {
+    let i = this.ports?.indexOf(this.selectedPort);
+    this.selectedPort.vlan = this.selectedVlan;
+    console.log(i, this.nPort);
+    console.log(this.selectedPort);
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      for (let element in params) {
+        this.currentForm = params[element];
+      }
+    });
+
+    this.generaPorte();
+    //console.log(this.ports)
+  }
+
+  selectPort(i: any) {
+    this.selectedPort = this.ports[i];
+    this.selectedVlan = this.selectedPort.vlan;
   }
 }

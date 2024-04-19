@@ -1,85 +1,102 @@
 <div *ngIf="currentForm == 'box'">
   <h2>BOX</h2>
-  <form>
-    <div class="form-group" style="text-align: left !important">
-      <label for="boxNome">Nome box</label>
-      <input
-        type="text"
-        class="form-control black-border"
-        id="boxNome"
-        placeholder="Inserire nome box"
-      />
-    </div>
-    <div class="form-group" style="text-align: left !important">
-      <label for="descBox">Descrizione</label>
-      <textarea
-        class="form-control black-border"
-        id="descBox"
-        rows="10"
-        placeholder="Inserire descrizione box"
-      ></textarea>
-    </div>
-    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
-      Annulla
-    </button>
-    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
-      Inserisci
-    </button>
-  </form>
+  <div class="form-group" style="text-align: left !important">
+    <label for="boxNome">Nome box</label>
+    <input
+      type="text"
+      class="form-control black-border"
+      id="boxNome"
+      placeholder="Inserire nome box"
+      [(ngModel)]="nomeBox"
+    />
+  </div>
+  <div class="form-group" style="text-align: left !important">
+    <label for="descBox">Descrizione</label>
+    <textarea
+      class="form-control black-border"
+      id="descBox"
+      rows="10"
+      placeholder="Inserire descrizione box"
+      [(ngModel)]="descrizioneBox"
+    ></textarea>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-danger mb-2 box-button black-border"
+    (click)="annullaBox()"
+  >
+    Annulla
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary mb-2 box-button black-border"
+    (click)="inserisciBox()"
+  >
+    Inserisci
+  </button>
 </div>
 
 <div *ngIf="currentForm == 'vlan'">
   <h2>VLAN</h2>
-  <form>
-    <div class="form-group" style="text-align: left !important">
-      <label for="vlanNome">Nome vlan</label>
-      <input
-        type="text"
-        class="form-control black-border"
-        id="vlanNome"
-        placeholder="Inserire nome vlan"
-      />
-    </div>
-    <div class="form-group" style="text-align: left !important">
-      <label for="vlanNome">Numero vlan</label>
-      <input
-        type="number"
-        class="form-control black-border"
-        id="vlanNome"
-        min="1"
-        max="4096"
-        placeholder="Inserire nome vlan"
-      />
-    </div>
-    <div class="form-group" style="text-align: left !important">
-      <label for="vlanNome">Colore vlan</label>
-      <input
-        type="color"
-        class="form-control black-border"
-        id="vlanNome"
-        min="1"
-        max="4096"
-        placeholder="Inserire nome vlan"
-      />
-    </div>
-    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
-      Annulla
-    </button>
-    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
-      Inserisci
-    </button>
-  </form>
+  <div class="form-group" style="text-align: left !important">
+    <label for="vlanNome">Nome vlan</label>
+    <input
+      type="text"
+      class="form-control black-border"
+      id="vlanNome"
+      placeholder="Inserire nome vlan"
+      [(ngModel)]="nomeVlan"
+    />
+  </div>
+  <div class="form-group" style="text-align: left !important">
+    <label for="vlanNome">Numero vlan</label>
+    <input
+      type="number"
+      class="form-control black-border"
+      id="vlanNome"
+      min="1"
+      max="4096"
+      placeholder="Inserire nome vlan"
+      [(ngModel)]="numeroVlan"
+    />
+  </div>
+  <div class="form-group" style="text-align: left !important">
+    <label for="vlanNome">Colore vlan</label>
+    <input
+      type="color"
+      class="form-control black-border"
+      id="vlanNome"
+      min="1"
+      max="4096"
+      placeholder="Inserire nome vlan"
+      [(ngModel)]="coloreVlan"
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-danger mb-2 box-button black-border"
+    (click)="annullaVlan()"
+  >
+    Annulla
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary mb-2 box-button black-border"
+    (click)="inserisciVlan()"
+  >
+    Inserisci
+  </button>
 </div>
 
 <div *ngIf="currentForm == 'porte'">
-  <h2>VLAN</h2>
-  <form>
+  <h2>PORTE</h2>
     <div class="row" style="text-align: left !important">
       <div class="col">
         <label>Tipologia porta</label>
         <select
           class="form-control black-border"
           placeholder="Seleziona tipo cavo"
+          [(ngModel)]="tipoPorta"
         >
           <option>Fibra ottica</option>
           <option>Rame</option>
@@ -90,6 +107,7 @@
         <select
           class="form-control black-border"
           placeholder="Seleziona tipo cavo"
+          [(ngModel)]="velocitaCavo"
         >
           <option>FastEthernet</option>
           <option>GigaEthernet</option>
@@ -100,7 +118,7 @@
     <div class="row form-group" style="text-align: left !important">
       <div class="col">
         <label>Colore porta</label>
-        <select class="form-control black-border">
+        <select class="form-control black-border" [(ngModel)]="colorePorta">
           <option>Rosso</option>
           <option>Arancione</option>
           <option>Verde</option>
@@ -115,24 +133,36 @@
         </select>
       </div>
     </div>
-    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border" (click)="annullaPorta()">
       Annulla
     </button>
-    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border" (click)="inserisciPorta()">
       Inserisci
     </button>
-  </form>
 </div>
 
 <div *ngIf="currentForm == 'switch'">
-  <h2>VLAN</h2>
+  <h2>SWITCH</h2>
   <form>
-    <div class="row" style="text-align: left !important" >
+    <div class="row" style="text-align: left !important">
       <div class="col center">
         Numero di porte:
-        <input name="nPorte" id="nPorte24" type="radio" textContent="24" checked=true (click)="portChange(24)">
+        <input
+          name="nPorte"
+          id="nPorte24"
+          type="radio"
+          textContent="24"
+          checked="true"
+          (click)="portChange(24)"
+        />
         <label id="nPorte24">24</label>
-        <input name="nPorte" id="nPorte48" type="radio"  textContent="48" (click)="portChange(48)">
+        <input
+          name="nPorte"
+          id="nPorte48"
+          type="radio"
+          textContent="48"
+          (click)="portChange(48)"
+        />
         <label id="nPorte48">48</label>
       </div>
     </div>
@@ -140,79 +170,128 @@
     <div class="row form-group" style="text-align: left !important">
       <div class="col">
         <table>
-          <tr >
-            <span *ngFor="let port of ports;index as i;">
-            <td *ngIf="i<12" (click)="selectPort(i)" [ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
+          <tr>
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i < 12"
+                (click)="selectPort(i)"
+                [ngClass]="{ selezionato: port.number == selectedPort.number }"
+              >
+                {{ port.number }}
+              </td>
             </span>
           </tr>
           <tr>
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i<12" [ngStyle]="{'backgroundColor': port.vlan.color}"></td>
-              </span>
-          </tr>
-          <tr>
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=12&&i<24" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
-              </span>
-          </tr>
-          <tr>
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=12&&i<24"[ngStyle]="{'backgroundColor': port.vlan.color}"></td>
-              </span>
-          </tr>
-          <tr *ngIf="nPort==48">
-            <span *ngFor="let port of ports;index as i;">
-            <td *ngIf="i>=24&&i<36" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i < 12"
+                [ngStyle]="{ backgroundColor: port.vlan.color }"
+              ></td>
             </span>
           </tr>
-          <tr *ngIf="nPort==48">
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=24&&i<36" [ngStyle]="{'backgroundColor': port.vlan.color}"></td>
-              </span>
+          <tr>
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 12 && i < 24"
+                (click)="selectPort(i)"
+                [ngClass]="{ selezionato: port.number == selectedPort.number }"
+              >
+                {{ port.number }}
+              </td>
+            </span>
           </tr>
-          <tr *ngIf="nPort==48">
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=36&&i<48" (click)="selectPort(i)"[ngClass]="{'selezionato':port.number==selectedPort.number}">{{port.number}}</td>
-              </span>
+          <tr>
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 12 && i < 24"
+                [ngStyle]="{ backgroundColor: port.vlan.color }"
+              ></td>
+            </span>
           </tr>
-          <tr *ngIf="nPort==48">
-            <span *ngFor="let port of ports;index as i;">
-              <td *ngIf="i>=36&&i<48"[ngStyle]="{'backgroundColor': port.vlan.color}"></td>
-              </span>
+          <tr *ngIf="nPort == 48">
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 24 && i < 36"
+                (click)="selectPort(i)"
+                [ngClass]="{ selezionato: port.number == selectedPort.number }"
+              >
+                {{ port.number }}
+              </td>
+            </span>
           </tr>
-
-          
+          <tr *ngIf="nPort == 48">
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 24 && i < 36"
+                [ngStyle]="{ backgroundColor: port.vlan.color }"
+              ></td>
+            </span>
+          </tr>
+          <tr *ngIf="nPort == 48">
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 36 && i < 48"
+                (click)="selectPort(i)"
+                [ngClass]="{ selezionato: port.number == selectedPort.number }"
+              >
+                {{ port.number }}
+              </td>
+            </span>
+          </tr>
+          <tr *ngIf="nPort == 48">
+            <span *ngFor="let port of ports; index as i">
+              <td
+                *ngIf="i >= 36 && i < 48"
+                [ngStyle]="{ backgroundColor: port.vlan.color }"
+              ></td>
+            </span>
+          </tr>
         </table>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label for="numeroPorta">Numero porta</label>
-      <input 
-        type="text"
-        class="form-control black-border"
-        id="numeroPorta" [(ngModel)]="selectedPort.number" name="numeroPorta">
+        <input
+          type="text"
+          class="form-control black-border"
+          id="numeroPorta"
+          [(ngModel)]="selectedPort.number"
+          name="numeroPorta"
+          disabled="true"
+        />
         <label for="velocitaPorta">Velocità porta</label>
-      <select 
-        class="form-control black-border"
-        id="velocitaPorta" [(ngModel)]="selectedPort.speed" name="velocitaPorta">
-      <option>FastEthernet</option>
-      <option>GigaEthernet</option>
-      </select> 
-      <label for="vlanPorta">Vlan porta</label>
-      <select [(ngModel)]="selectedVlan" (click)="changeVlan()"
-        class="form-control black-border"
-        id="vlanPorta" name="vlanPorta">
-      <option *ngFor="let vlan of vlans" [ngValue]="vlan">{{vlan.name}}-{{vlan.number}} </option>
-
-      </select> 
-      <i class="bi bi-square-fill" [ngStyle]="{'color':selectedVlan?.color}"></i>
+        <select
+          class="form-control black-border"
+          id="velocitaPorta"
+          [(ngModel)]="selectedPort.speed"
+          name="velocitaPorta"
+        >
+          <option>FastEthernet</option>
+          <option>GigaEthernet</option>
+        </select>
+        <label for="vlanPorta">Vlan porta</label>
+        <select
+          [(ngModel)]="selectedVlan"
+          (click)="changeVlan()"
+          class="form-control black-border"
+          id="vlanPorta"
+          name="vlanPorta"
+        >
+          <option *ngFor="let vlan of switchService.vlan" [ngValue]="vlan">
+            {{ vlan.name }}-{{ vlan.number }}
+          </option>
+        </select>
+        <i
+          class="bi bi-square-fill"
+          [ngStyle]="{ color: selectedVlan?.color }"
+        ></i>
       </div>
     </div>
-    <button type="submit" class="btn btn-danger mb-2 box-button black-border">
+    <button type="submit" class="btn btn-danger mb-2 box-button black-border" (click)="annullaSwitch()">
       Annulla
     </button>
-    <button type="submit" class="btn btn-primary mb-2 box-button black-border">
+    <button type="submit" class="btn btn-primary mb-2 box-button black-border" (click)="inserisciSwitch()">
       Inserisci
     </button>
   </form>
