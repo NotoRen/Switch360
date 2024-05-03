@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { VlanModel } from '../models/vlan-model';
 import { PortModel } from '../models/port-model';
 import saveAs from 'file-saver';
+import path from 'path';
 
 
 @Injectable({
@@ -22,7 +23,10 @@ export class SwitchService {
     saveAs(file, 'switch.json')
   }
 
-  carica(){
+  carica(file:any){
+    console.log(file)
+    //console.log(path)
+    //console.log(path.join(file, "../src"))
   }
 
 

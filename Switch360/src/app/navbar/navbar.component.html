@@ -7,7 +7,10 @@
          
       </li>
       <li class="nav-item">
-         <button type="button" class="btn btn-info" (click)="switchService.carica()">Carica</button>
+         <label for="file-upload" class="custom-file-upload btn btn-info">
+            Carica
+        </label>
+        <input id="file-upload" type="file" [(ngModel)]="selectedFile" (change)="selezionaFile()"/>
       </li>
     </ul>
 </nav>
