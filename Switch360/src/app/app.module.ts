@@ -10,11 +10,13 @@ import { ModificaComponent } from './main/modifica/modifica.component';
 import { VisualizzaComponent } from './main/visualizza/visualizza.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ContentsComponent } from './main/contents/contents.component';
+import { ContentsComponent } from './main/contents-inserisci/contents.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { ContentVisualizzaComponent } from './main/content-visualizza/content-visualizza.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     InserisciComponent,
     ModificaComponent,
     VisualizzaComponent,
+    ContentVisualizzaComponent,
     NavbarComponent,
     FooterComponent,
     ContentsComponent,

@@ -24,7 +24,7 @@ export class ContentsComponent {
   descrizioneBox: string = '';
 
   inserisciBox() {
-    let box: any = { nome: this.nomeBox, descrizione: this.descrizioneBox };
+    let box: any = { name: this.nomeBox, desc: this.descrizioneBox };
     this.switchService.box.push(box);
     this.annullaBox();
   }
@@ -85,8 +85,11 @@ export class ContentsComponent {
   //#endregion
 
   //#region Switch
+  nomeSwitch="";
   inserisciSwitch(){
       this.switchService.switch=this.ports
+      this.switchService.box=this.selectedBox;
+      this.switchService.nameSwitch=this.nomeSwitch;
   }
 
   annullaSwitch(){
@@ -103,6 +106,9 @@ export class ContentsComponent {
   ports: PortModel[] = [];
 
   selectedPort: PortModel = new PortModel('1', this.switchService.vlan[1], '0/1');
+
+  
+  selectedBox=this.switchService.box[0];
 
   portChange(n: number) {
     this.nPort = n;

@@ -1,0 +1,9 @@
+
+<div class="col-md pad"><div class="contenuto">
+    <div *ngFor="let box of switchService.box">
+        <h2>{{box.name}}</h2>
+        <div *ngFor="let switch of switchService.switch">
+            <h3>{{switch.number}}</h3>
+        </div>
+    </div>
+  </div></div>

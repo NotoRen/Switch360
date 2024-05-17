@@ -251,16 +251,24 @@
     </div>
     <div class="row">
       <div class="col">
+        <div class="form-group" style="text-align: left !important">
+          <label for="boxNome">Nome Switch</label>
+          <input
+            type="text"
+            class="form-control black-border"
+            id="boxNome"
+            placeholder="Inserire il nome dello Switch"
+            [(ngModel)]="nomeSwitch"
+          />
         <label for="vlanPorta">Box</label>
         <select
           [(ngModel)]="selectedBox"
-          (click)="changeBox()"
           class="form-control black-border"
           id="vlanPorta"
           name="vlanPorta"
         >
-          <option *ngFor="let vlan of switchService.vlan" [ngValue]="vlan">
-            {{ vlan.name }}-{{ vlan.number }}
+          <option *ngFor="let box of switchService.box" [ngValue]="box">
+            {{ box.name }}
           </option>
         </select>
         <label for="numeroPorta">Numero porta</label>
@@ -299,6 +307,8 @@
           [ngStyle]="{ 'color': selectedVlan.color }"
         ></i>
       </div>
+      
+    </div>
     </div>
     <button type="submit" class="btn btn-danger mb-2 box-button black-border" (click)="annullaSwitch()">
       Annulla

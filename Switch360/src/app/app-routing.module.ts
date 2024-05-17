@@ -4,7 +4,7 @@ import { InserisciComponent } from './main/inserisci/inserisci.component';
 import { ModificaComponent } from './main/modifica/modifica.component';
 import { VisualizzaComponent } from './main/visualizza/visualizza.component';
 import { AppComponent } from './app.component';
-import { ContentsComponent } from './main/contents/contents.component';
+import { ContentsComponent } from './main/contents-inserisci/contents.component';
 
 
 const routes: Routes = [{

@@ -12,13 +12,14 @@ export class SwitchService {
 
   constructor() { }
 
-  box:any=[]
+  nameSwitch="Switch"
+  box:any=[{"name":"default","desc":"default"}]
   vlan:VlanModel[]=[{"name":"default","number":1,"color":"#FFFFFF"}]
   porte:any=[]
   switch:PortModel[]=[]
 
   salva(){
-    let json:any=[this.box,this.vlan,this.porte,this.switch]
+    let json:any=[this.nameSwitch,this.box,this.vlan,this.porte,this.switch]
     let file = new Blob([`${JSON.stringify(json)}`], { type: 'text/csv;charset=utf-8' });
     saveAs(file, 'switch.json')
   }
