@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwitchService } from '../services/switch.service';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +11,12 @@ export class MainComponent {
   visInserisci:boolean=true;
   visModifica:boolean=false;
   visVisualizza:boolean=false;
+
+  constructor(public switchService:SwitchService){}
+
+  ngOnInit(){
+    this.switchService.caricaDati()
+  }
 
   onNavigate(feature:string){
     switch(feature){

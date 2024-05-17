@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PortModel } from '../../models/port-model';
 import { VlanModel } from '../../models/vlan-model';
 import { SwitchService } from '../../services/switch.service';
+import { SwitchModel } from '../../models/switch-model';
+import { BoxModel } from '../../models/box-model';
 
 @Component({
   selector: 'app-contents',
@@ -27,6 +29,7 @@ export class ContentsComponent {
     let box: any = { name: this.nomeBox, desc: this.descrizioneBox };
     this.switchService.box.push(box);
     this.annullaBox();
+    this.switchService.salvaDati()
   }
 
   annullaBox() {
@@ -50,6 +53,7 @@ export class ContentsComponent {
     };
     this.switchService.vlan.push(vlan);
     this.annullaVlan();
+    this.switchService.salvaDati()
   }
 
   annullaVlan() {
@@ -74,6 +78,7 @@ export class ContentsComponent {
     };
     this.switchService.porte.push(porta);
     this.annullaPorta();
+    this.switchService.salvaDati()
   }
 
   annullaPorta() {
@@ -85,11 +90,12 @@ export class ContentsComponent {
   //#endregion
 
   //#region Switch
-  nomeSwitch="";
+  nomeSwitch:String="Default";
   inserisciSwitch(){
-      this.switchService.switch=this.ports
-      this.switchService.box=this.selectedBox;
-      this.switchService.nameSwitch=this.nomeSwitch;
+      console.log(this.nomeSwitch)
+      this.switchService.switch.push(new SwitchModel(this.nomeSwitch,this.ports,this.selectedBox))
+      this.switchService.salvaDati()
+      this.annullaSwitch()
   }
 
   annullaSwitch(){
@@ -100,7 +106,7 @@ export class ContentsComponent {
   //#endregion
   nPort: number = 24;
   selectedVlan: VlanModel = this.switchService.vlan[0];
-
+  selectedBox:BoxModel=this.switchService.box[0];
   
 
   ports: PortModel[] = [];
@@ -108,7 +114,7 @@ export class ContentsComponent {
   selectedPort: PortModel = new PortModel('1', this.switchService.vlan[1], '0/1');
 
   
-  selectedBox=this.switchService.box[0];
+  
 
   portChange(n: number) {
     this.nPort = n;

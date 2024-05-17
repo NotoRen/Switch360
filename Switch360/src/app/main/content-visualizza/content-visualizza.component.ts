@@ -13,4 +13,8 @@ export class ContentVisualizzaComponent {
   constructor(
     public switchService: SwitchService
   ) {}
+
+  ngOnInit(){
+    console.log(this.switchService.switch)
+  }
 }
