@@ -25,8 +25,7 @@ export class SwitchService {
 
   carica(file:any){
     console.log(file)
-    //console.log(path)
-    //console.log(path.join(file, "../src"))
+    localStorage.setItem("lastSave",file);
   }
 
 

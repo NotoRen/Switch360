@@ -251,6 +251,18 @@
     </div>
     <div class="row">
       <div class="col">
+        <label for="vlanPorta">Box</label>
+        <select
+          [(ngModel)]="selectedBox"
+          (click)="changeBox()"
+          class="form-control black-border"
+          id="vlanPorta"
+          name="vlanPorta"
+        >
+          <option *ngFor="let vlan of switchService.vlan" [ngValue]="vlan">
+            {{ vlan.name }}-{{ vlan.number }}
+          </option>
+        </select>
         <label for="numeroPorta">Numero porta</label>
         <input
           type="text"
