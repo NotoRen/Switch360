@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { VlanModel } from '../models/vlan-model';
 import { PortModel } from '../models/port-model';
 import saveAs from 'file-saver';
-import path from 'path';
+
 
 
 @Injectable({
