@@ -14,15 +14,16 @@ export class NavbarComponent {
 
   constructor(public switchService:SwitchService,public http:HttpClient){}
   
-  selezionaFile(){
-    let file=this.selectedFile;
-    console.log(file)
+  selezionaFile(event:any){
+    this.selectedFile = event.target.files[0];
+    const fileReader:any = new FileReader();
+    fileReader.readAsText(this.selectedFile, "UTF-8");
+    fileReader.onload = () => {
+     this.switchService.carica(JSON.parse(fileReader.result))
+    }
+    fileReader.onerror = (error:any) => {
+      console.log(error);
+    }
 
-
-    this.http.get(file).subscribe(res => {
-      console.log(res);
-    });
-    this.switchService.carica(file)
-
-  }
+  }
 }
