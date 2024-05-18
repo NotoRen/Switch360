@@ -48,3 +48,7 @@ i{
     float: right; 
     font-size: 20pt;
 }
+#divButtons{
+    margin-top: 2vh;
+    padding:5px;
+}

@@ -45,12 +45,14 @@
 .contenuto{
     height: fit-content;
     width: 75%;
+    height: 73vh;
     margin:auto;
     border: black 3px solid;
     border-radius: 15px;
     background-color: white;
     padding: 30px;
     text-align: center;
+    overflow-y: scroll;
 }
 
 @media (width<790px) {
