@@ -1,92 +1,95 @@
 <div class="row">
-  <div class="col-md-2 pad">
+  <div class="col-lg-1">
     <div class="btn-group-vertical">
       <div *ngFor="let box of switchService.box">
-        
+      
         <div class="custom-control">
           <input type="checkbox" class="custom-control-input" id="{{box.name}}">
           <label class="custom-control-label" for="{{box.name}}">{{box.name}}</label>
         </div>
-</div>
+      </div>
     </div>
   </div>
-  <div class="separatore"></div>
-  <div class="col-md pad">
+  <div class="separatore "></div>
+  <div class="col-lg-9">
     <div class="contenuto">
-     
-        <div *ngFor="let box of switchService.box">
-          <h2>{{box.name}}</h2>
-          <div *ngFor="let switch of switchService.switch">
-            <div *ngIf="switch.box.name==box.name">
-            <h3>{{ switch.name }}</h3>
-            <div class="form-group" style="text-align: left !important">
-              <div class="col">
-                <table>
-                  <tr>
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td *ngIf="i < 12">
-                        {{ port.number }}
-                      </td>
-                    </span>
-                  </tr>
-                  <tr>
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td
-                        *ngIf="i < 12"
-                        [ngStyle]="{ backgroundColor: port.vlan.color }"
-                      ></td>
-                    </span>
-                  </tr>
-                  <tr>
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td *ngIf="i >= 12 && i < 24">
-                        {{ port.number }}
-                      </td>
-                    </span>
-                  </tr>
-                  <tr>
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td
-                        *ngIf="i >= 12 && i < 24"
-                        [ngStyle]="{ backgroundColor: port.vlan.color }"
-                      ></td>
-                    </span>
-                  </tr>
-                  <tr *ngIf="switch.ports.length == 48">
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td *ngIf="i >= 24 && i < 36">
-                        {{ port.number }}
-                      </td>
-                    </span>
-                  </tr>
-                  <tr *ngIf="switch.ports.length == 48">
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td
-                        *ngIf="i >= 24 && i < 36"
-                        [ngStyle]="{ backgroundColor: port.vlan.color }"
-                      ></td>
-                    </span>
-                  </tr>
-                  <tr *ngIf="switch.ports.length == 48">
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td *ngIf="i >= 36 && i < 48">
-                        {{ port.number }}
-                      </td>
-                    </span>
-                  </tr>
-                  <tr *ngIf="switch.ports.length == 48">
-                    <span *ngFor="let port of switch.ports; index as i">
-                      <td
-                        *ngIf="i >= 36 && i < 48"
-                        [ngStyle]="{ backgroundColor: port.vlan.color }"
-                      ></td>
-                    </span>
-                  </tr>
-                </table>
-              </div>
+      <div *ngFor="let box of switchService.box">
+        <h2>{{box.name}}</h2>
+        <div *ngFor="let switch of switchService.switch">
+          <div *ngIf="switch.box.name==box.name">
+          <h3>{{ switch.name }}</h3>
+          <div class="form-group" style="text-align: left !important">
+            <div class="col">
+              <table>
+                <tr>
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td *ngIf="i < 12">
+                      {{ port.number }}
+                    </td>
+                  </span>
+                </tr>
+                <tr>
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td
+                      *ngIf="i < 12"
+                      [ngStyle]="{ backgroundColor: port.vlan.color }"
+                    ></td>
+                  </span>
+                </tr>
+                <tr>
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td *ngIf="i >= 12 && i < 24">
+                      {{ port.number }}
+                    </td>
+                  </span>
+                </tr>
+                <tr>
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td
+                      *ngIf="i >= 12 && i < 24"
+                      [ngStyle]="{ backgroundColor: port.vlan.color }"
+                    ></td>
+                  </span>
+                </tr>
+                <tr *ngIf="switch.ports.length == 48">
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td *ngIf="i >= 24 && i < 36">
+                      {{ port.number }}
+                    </td>
+                  </span>
+                </tr>
+                <tr *ngIf="switch.ports.length == 48">
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td
+                      *ngIf="i >= 24 && i < 36"
+                      [ngStyle]="{ backgroundColor: port.vlan.color }"
+                    ></td>
+                  </span>
+                </tr>
+                <tr *ngIf="switch.ports.length == 48">
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td *ngIf="i >= 36 && i < 48">
+                      {{ port.number }}
+                    </td>
+                  </span>
+                </tr>
+                <tr *ngIf="switch.ports.length == 48">
+                  <span *ngFor="let port of switch.ports; index as i">
+                    <td
+                      *ngIf="i >= 36 && i < 48"
+                      [ngStyle]="{ backgroundColor: port.vlan.color }"
+                    ></td>
+                  </span>
+                </tr>
+              </table>
             </div>
           </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-lg-1">
+    <h4>Legenda vlan:</h4>
+  </div>
+</div>
