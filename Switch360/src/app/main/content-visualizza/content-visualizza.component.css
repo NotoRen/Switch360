@@ -6,7 +6,6 @@
     background-color: white;
     margin:6px;
     margin-left: 1vw;
-    margin-right: 1vw;
     padding: 3%;
     overflow: auto;
     
@@ -36,7 +35,7 @@ table{
     height: auto;
     width: 3px !important;
     margin: 10px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .row{
     height: 80vh;
