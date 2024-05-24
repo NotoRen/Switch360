@@ -13,9 +13,9 @@
     <div class="contenuto">
       <div *ngFor="let box of switchService.box">
         <div  *ngIf="selectedBox.length==0||selectedBox.includes(box)">
-        <h2>{{box.name}}</h2>
+        <h2 class="box" (click)="apriBox(box)">{{box.name}} <h2 *ngIf="compresso.includes(box)"></h2><h2 *ngIf="!compresso.includes(box)"></h2></h2>
         <div *ngFor="let switch of switchService.switch">
-          <div *ngIf="switch.box.name==box.name">
+          <div *ngIf="switch.box.name==box.name&&!compresso.includes(box)">
           <h3>{{ switch.name }}</h3>
           <div class="form-group" style="text-align: left !important">
             <div class="col">

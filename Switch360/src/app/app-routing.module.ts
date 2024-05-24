@@ -26,7 +26,10 @@ const routes: Routes = [{
   path: 'modifica', // senza slash !
   component: ModificaComponent,
   children: [
-    { path: 'box', component: ModificaComponent },
+    { path: ':box', component: ContentsComponent },
+    { path: ':vlan', component: ContentsComponent },
+    { path: ':porte', component: ContentsComponent },
+    { path: ':switch', component: ContentsComponent },
 
     ]
 },{

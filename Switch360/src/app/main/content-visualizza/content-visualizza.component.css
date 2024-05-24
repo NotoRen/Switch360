@@ -7,10 +7,13 @@
     margin:6px;
     margin-left: 1vw;
     padding: 3%;
-    overflow: auto;
-    
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
 }
-
+.contenuto::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 .row{
     width: 100%;
 }
@@ -77,6 +80,10 @@ input[type='checkbox']{
 
 .checked{
     background-color: #17a2b8;
+}
+
+.box{
+    border-bottom: black 3px solid;
 }
 
 

@@ -17,10 +17,20 @@ export class ContentVisualizzaComponent {
 
   selectedBox:BoxModel[]=[]
 
+  compresso:BoxModel[]=[]
+
   ngOnInit(){
     console.log(this.switchService.switch)
   }
+  apriBox(e:any){
+    if(this.compresso.includes(e)){
+      let i=this.compresso.indexOf(e)
+      this.compresso.splice(i,1)
+    }else{
+      this.compresso.push(e)
+    }
 
+  }
   modificaBox(e:any){
     if(this.selectedBox.includes(e)){
       let i=this.selectedBox.indexOf(e)
@@ -29,6 +39,5 @@ export class ContentVisualizzaComponent {
       this.selectedBox.push(e)
     }
 
-    console.log(this.selectedBox)
   }
 }
