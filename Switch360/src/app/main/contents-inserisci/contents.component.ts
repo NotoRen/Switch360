@@ -8,6 +8,7 @@ import { SwitchService } from '../../services/switch.service';
 import { SwitchModel } from '../../models/switch-model';
 import { BoxModel } from '../../models/box-model';
 import { porteSwitchModel } from '../../models/porteSwitch-model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contents',
@@ -31,6 +32,7 @@ export class ContentsComponent {
     this.switchService.box.push(box);
     this.annullaBox();
     this.switchService.salvaDati()
+    Swal.fire("Box inserito correttamente", "success");
   }
 
   annullaBox() {
@@ -55,6 +57,8 @@ export class ContentsComponent {
     this.switchService.vlan.push(vlan);
     this.annullaVlan();
     this.switchService.salvaDati()
+    
+    Swal.fire("Vlan inserita correttamente", "success");
   }
 
   annullaVlan() {
@@ -80,6 +84,7 @@ export class ContentsComponent {
     this.switchService.porte.push(porta);
     this.annullaPorta();
     this.switchService.salvaDati()
+    Swal.fire("Porta inserita correttamente", "success");
   }
 
   annullaPorta() {
@@ -97,6 +102,8 @@ export class ContentsComponent {
       this.switchService.switch.push(new SwitchModel(this.nomeSwitch,this.ports,this.selectedBox))
       this.switchService.salvaDati()
       this.annullaSwitch()
+      
+    Swal.fire("Switch inserito correttamente", "success");
   }
 
   annullaSwitch(){

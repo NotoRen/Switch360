@@ -12,5 +12,9 @@
         </label>
         <input id="file-upload" type="file" [(ngModel)]="selectedFile" (change)="selezionaFile($event)"/>
       </li>
+      <li class="nav-item">
+         <button type="button" class="btn btn-info" (click)="cancellaDati()">Cancella dati</button>
+         
+      </li>
     </ul>
 </nav>

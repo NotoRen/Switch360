@@ -24,6 +24,12 @@ export class SwitchService {
       this.porte=file.porte
       this.switch=file.switch
     }
+    else{
+      this.box=[]
+      this.vlan=[]
+      this.porte=[]
+      this.switch=[]
+    }
     
   }
 
@@ -32,6 +38,11 @@ export class SwitchService {
     let save=JSON.stringify(json)
     localStorage.setItem("lastSave",save); 
 
+  }
+
+  cancellaDati(){
+    localStorage.clear();
+    this.caricaDati()
   }
 
   box:BoxModel[]=[{"name":"Default","desc":"Default"}]
