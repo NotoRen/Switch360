@@ -24,14 +24,24 @@
     border: black solid 1px;
     letter-spacing: 2px;
 }
+
 .pad{
     padding-top: 15px;
 }
 .contenuto{
+    height: fit-content;
+    width: 55%;
     height: 73vh;
-    width: 50%;
-    margin-left: 25%;
+    margin:auto;
     border: black 3px solid;
-    border-radius: 5%;
+    border-radius: 15px;
     background-color: white;
+    padding: 30px;
+    text-align: center;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+}
+.contenuto::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }

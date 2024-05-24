@@ -16,6 +16,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentVisualizzaComponent } from './main/content-visualizza/content-visualizza.component';
+import { ContentModificaComponent } from './main/content-modifica/content-modifica.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ContentVisualizzaComponent } from './main/content-visualizza/content-vi
     ModificaComponent,
     VisualizzaComponent,
     ContentVisualizzaComponent,
+    ContentModificaComponent,
     NavbarComponent,
     FooterComponent,
     ContentsComponent,
