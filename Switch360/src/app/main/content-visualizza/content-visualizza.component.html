@@ -22,7 +22,7 @@
               <table>
                 <tr>
                   <span *ngFor="let port of switch.ports; index as i">
-                    <td *ngIf="i < 12">
+                    <td *ngIf="i < 12" [ngStyle]="{backgroundColor:port.speed.colore}">
                       {{ port.number }}
                     </td>
                   </span>
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                   <span *ngFor="let port of switch.ports; index as i">
-                    <td *ngIf="i >= 12 && i < 24">
+                    <td *ngIf="i >= 12 && i < 24" [ngStyle]="{backgroundColor:port.speed.colore}">
                       {{ port.number }}
                     </td>
                   </span>
@@ -52,7 +52,7 @@
                 </tr>
                 <tr *ngIf="switch.ports.length == 48">
                   <span *ngFor="let port of switch.ports; index as i">
-                    <td *ngIf="i >= 24 && i < 36">
+                    <td *ngIf="i >= 24 && i < 36" [ngStyle]="{backgroundColor:port.speed.colore}">
                       {{ port.number }}
                     </td>
                   </span>
@@ -67,7 +67,7 @@
                 </tr>
                 <tr *ngIf="switch.ports.length == 48">
                   <span *ngFor="let port of switch.ports; index as i">
-                    <td *ngIf="i >= 36 && i < 48">
+                    <td *ngIf="i >= 36 && i < 48" [ngStyle]="{backgroundColor:port.speed.colore}">
                       {{ port.number }}
                     </td>
                   </span>
