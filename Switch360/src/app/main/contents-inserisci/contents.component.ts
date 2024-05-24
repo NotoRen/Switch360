@@ -157,6 +157,7 @@ export class ContentsComponent {
       for (let element in params) {
         this.currentForm = params[element];
       }
+      console.log(params,this.currentForm)
     });
 
     this.generaPorte();

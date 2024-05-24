@@ -5,6 +5,7 @@ import { ModificaComponent } from './main/modifica/modifica.component';
 import { VisualizzaComponent } from './main/visualizza/visualizza.component';
 import { AppComponent } from './app.component';
 import { ContentsComponent } from './main/contents-inserisci/contents.component';
+import { ContentModificaComponent } from './main/content-modifica/content-modifica.component';
 
 
 const routes: Routes = [{
@@ -26,10 +27,10 @@ const routes: Routes = [{
   path: 'modifica', // senza slash !
   component: ModificaComponent,
   children: [
-    { path: ':box', component: ContentsComponent },
-    { path: ':vlan', component: ContentsComponent },
-    { path: ':porte', component: ContentsComponent },
-    { path: ':switch', component: ContentsComponent },
+    { path: ':box', component: ContentModificaComponent },
+    { path: ':vlan', component: ContentModificaComponent },
+    { path: ':porte', component: ContentModificaComponent },
+    { path: ':switch', component: ContentModificaComponent },
 
     ]
 },{

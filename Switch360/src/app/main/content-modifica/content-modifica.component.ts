@@ -13,15 +13,18 @@ export class ContentModificaComponent {
     public switchService: SwitchService
   ) {}
   currentForm: string = 'box';
+
   ngOnInit() {
+    console.log(this.route.params)
     this.route.params.subscribe((params: Params) => {
+      console.log(params)
       for (let element in params) {
         this.currentForm = params[element];
       }
+      console.log(this.currentForm)
     });
 
-    //this.generaPorte();
-    //console.log(this.ports)
+    
   }
   
 }
