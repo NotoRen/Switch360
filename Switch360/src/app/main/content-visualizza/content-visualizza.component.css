@@ -1,6 +1,6 @@
 .contenuto{
     height: 73vh;
-    /*width:  90%;*/
+    width:  65vw;
     border: black 3px solid;
     border-radius: 2vw;
     background-color: white;
@@ -84,6 +84,12 @@ input[type='checkbox']{
 
 .box{
     border-bottom: black 3px solid;
+    display: flex;
+    width: 60vw;
 }
 
+h1{
+    left: 54vw;
+    position: relative;
+}
 
