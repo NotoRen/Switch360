@@ -287,8 +287,9 @@
           [(ngModel)]="selectedPort.speed"
           name="velocitaPorta"
         >
-          <option>FastEthernet</option>
-          <option>GigaEthernet</option>
+        <option *ngFor="let port of switchService.porte" [ngValue]="selectedPorta">
+          {{ port.tipo }} - {{ port.velocita }} - {{ port.colore }} 
+        </option>
         </select>
         <label for="vlanPorta">Vlan porta</label>
         <select

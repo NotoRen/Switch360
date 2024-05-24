@@ -7,6 +7,7 @@ import { VlanModel } from '../../models/vlan-model';
 import { SwitchService } from '../../services/switch.service';
 import { SwitchModel } from '../../models/switch-model';
 import { BoxModel } from '../../models/box-model';
+import { porteSwitchModel } from '../../models/porteSwitch-model';
 
 @Component({
   selector: 'app-contents',
@@ -111,7 +112,9 @@ export class ContentsComponent {
 
   ports: PortModel[] = [];
 
-  selectedPort: PortModel = new PortModel('1', this.switchService.vlan[1], '0/1');
+  selectedPort: PortModel = new PortModel(this.switchService.porte[0], this.switchService.vlan[1], '0/1');
+
+  selectedPorta: porteSwitchModel=this.switchService.porte[0]
 
   
   
@@ -126,7 +129,7 @@ export class ContentsComponent {
       if (this.nPort > this.ports.length) {
         for (let i = this.ports.length; i < this.nPort; i++) {
           let vlan = this.switchService.vlan[0];
-          let port = new PortModel('FastEthernet', vlan, '');
+          let port = new PortModel(this.switchService.porte[0], vlan, '');
           if (i < 24) port.number = '0/' + (i + 1);
           else port.number = '1/' + (i - 23);
           this.ports?.push(port);

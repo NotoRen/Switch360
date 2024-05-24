@@ -4,6 +4,7 @@ import { PortModel } from '../models/port-model';
 import { SwitchModel } from '../models/switch-model';
 import saveAs from 'file-saver';
 import { BoxModel } from '../models/box-model';
+import { porteSwitchModel } from '../models/porteSwitch-model';
 
 
 
@@ -35,7 +36,7 @@ export class SwitchService {
 
   box:BoxModel[]=[{"name":"Default","desc":"Default"}]
   vlan:VlanModel[]=[{"name":"Default","number":1,"color":"#FFFFFF"}]
-  porte:any=[]
+  porte:porteSwitchModel[]=[{ "tipo": "Rame", "velocita": "FastEthernet", "colore": "Bianco"}]
   switch:SwitchModel[]=[]
 
   salva(){

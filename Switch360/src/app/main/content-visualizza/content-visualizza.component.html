@@ -1,12 +1,10 @@
 <div class="row">
-  <div class="col-lg-1">
+  <div class="col-lg-1" style="padding-left: 0px !important;">
     <div class="btn-group-vertical">
       <div *ngFor="let box of switchService.box">
       
-        <div class="custom-control">
-          <input type="checkbox" class="custom-control-input" id="{{box.name}}">
-          <label class="custom-control-label" for="{{box.name}}">{{box.name}}</label>
-        </div>
+          <input type="checkbox" id="{{box.name}}" (click)="modificaBox(box)">
+          <label class="fakeButton" for="{{box.name}}" [ngClass]="{'border':box==switchService.box[switchService.box.length-1],'checked':selectedBox.includes(box)}">{{box.name}}</label>
       </div>
     </div>
   </div>
@@ -14,6 +12,7 @@
   <div class="col-lg-8">
     <div class="contenuto">
       <div *ngFor="let box of switchService.box">
+        <div  *ngIf="selectedBox.length==0||selectedBox.includes(box)">
         <h2>{{box.name}}</h2>
         <div *ngFor="let switch of switchService.switch">
           <div *ngIf="switch.box.name==box.name">
@@ -86,6 +85,7 @@
           </div>
         </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
