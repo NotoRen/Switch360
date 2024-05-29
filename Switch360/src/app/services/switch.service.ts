@@ -25,10 +25,231 @@ export class SwitchService {
       this.switch=file.switch
     }
     else{
-      this.box=[]
-      this.vlan=[]
-      this.porte=[]
-      this.switch=[]
+      this.box=[{"name":"Default","desc":"Default Box"}]
+      this.vlan=[{"number":1,"name":"Default","color":"white"}]
+      this.porte=[{"tipo":"Rame","velocita":"FastEthernet","colore":"white"}]
+      this.switch=[{
+        "name": "Default",
+        "ports": [
+          {
+            "number": "0/1",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/2",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/3",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/4",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/5",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/6",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/7",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/8",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/9",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/10",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/11",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/12",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/13",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/14",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/15",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/16",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/17",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/18",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/19",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/20",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/21",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/22",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/23",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          },
+          {
+            "number": "0/24",
+            "speed": {
+              "tipo": "Rame",
+              "velocita": "FastEthernet",
+              "colore": "Bianco"
+            },
+            "vlan": { "number": 1, "name": "Default", "color": "white" }
+          }
+        ],
+        "box": { "name": "Default", "desc": "Default Box" }
+      }]
     }
     
   }

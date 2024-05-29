@@ -85,11 +85,23 @@ input[type='checkbox']{
 .box{
     border-bottom: black 3px solid;
     display: flex;
-    width: 60vw;
+    width: 62vw;
+    margin-bottom: 0;
+    
 }
 
-h1{
-    left: 54vw;
+.minibox{
+    border-bottom: rgb(87, 87, 87) 1px solid;
+    display: flex;
+    width: 62vw;
+    padding-left: 14vw;
+    background-color: #c4c4c4;
+    padding-top: 8px;
+    margin-bottom: 0;
+}
+
+.freccia{
+    left: 52vw;
     position: relative;
 }
 

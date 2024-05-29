@@ -73,7 +73,7 @@ export class ContentsComponent {
 
   tipoPorta: string = 'Rame';
   velocitaCavo: string = 'FastEthernet';
-  colorePorta: string = 'Rosso';
+  colorePorta: string = 'white';
 
   inserisciPorta() {
     let porta: any = {
@@ -90,7 +90,7 @@ export class ContentsComponent {
   annullaPorta() {
     this.tipoPorta = 'Rame';
     this.velocitaCavo = 'FastEthernet';
-    this.colorePorta = 'Rosso';
+    this.colorePorta = 'white';
   }
 
   //#endregion
@@ -111,6 +111,18 @@ export class ContentsComponent {
       this.generaPorte()
   }
   
+  copied:any
+
+  copiaSwitch(){
+    this.copied=this.selectedPort
+  }
+
+  incollaSwitch(){
+    this.ports[this.index].speed=this.copied.speed
+    this.ports[this.index].vlan=this.copied.vlan
+    this.selectedVlan=this.ports[this.index].vlan
+  }
+
   //#endregion
   nPort: number = 24;
   selectedVlan: VlanModel = this.switchService.vlan[0];
@@ -159,6 +171,12 @@ export class ContentsComponent {
     console.log(this.selectedPort);
   }
 
+  changePorta(){
+    console.log()
+    let i = this.ports?.indexOf(this.selectedPort);
+    this.selectedPort.speed = this.selectedPorta;
+  }
+
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       for (let element in params) {
@@ -171,8 +189,13 @@ export class ContentsComponent {
     //console.log(this.ports)
   }
 
+  index:number=0
+
   selectPort(i: any) {
+    this.index=i
     this.selectedPort = this.ports[i];
     this.selectedVlan = this.selectedPort.vlan;
+    this.selectedPorta=this.selectedPort.speed
+    
   }
 }
