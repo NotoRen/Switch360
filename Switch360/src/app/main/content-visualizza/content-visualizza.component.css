@@ -101,7 +101,11 @@ input[type='checkbox']{
 }
 
 .freccia{
-    left: 52vw;
+    left: 54vw;
     position: relative;
+}
+
+h1>h1{
+    width: 100px;
 }
 

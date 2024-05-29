@@ -13,7 +13,7 @@
     <div class="contenuto">
       <div *ngFor="let box of switchService.box">
         <div  *ngIf="selectedBox.length==0||selectedBox.includes(box)">
-        <h1 class="box" (click)="apriBox(box)">{{box.name}} <h1 class="freccia" *ngIf="compresso.includes(box)"><i class="bi bi-caret-right-fill"></i> </h1><h1 class="freccia" *ngIf="!compresso.includes(box)"> <i class="bi bi-caret-down-fill"></i> </h1> </h1> 
+        <h1 class="box" (click)="apriBox(box)"><h1>{{box.name}}</h1> <h1 class="freccia" *ngIf="compresso.includes(box)"><i class="bi bi-caret-right-fill"></i> </h1><h1 class="freccia" *ngIf="!compresso.includes(box)"> <i class="bi bi-caret-down-fill"></i> </h1> </h1> 
         <div *ngFor="let switch of switchService.switch">
           <div *ngIf="switch.box.name==box.name&&!compresso.includes(box)">
           <h3 class="minibox" (click)="apriSwitch(switch)">{{ switch.name }} </h3>
