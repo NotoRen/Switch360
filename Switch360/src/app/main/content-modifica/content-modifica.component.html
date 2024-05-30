@@ -1,8 +1,18 @@
 <div *ngIf="currentForm == 'box'">
     <h2>BOX</h2>
     <div class="form-group" style="text-align: left !important">
+      <div class="col">
+        <label>Seleziona Box da modificare</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+          [(ngModel)]="box">
+          <option [ngValue]="box" *ngFor="let box of switchService.box">{{box.name}}</option>
+        </select>
+      </div>
       <label for="boxNome">Nome box</label>
       <input
+        [(ngModel)]="box.name"
         type="text"
         class="form-control black-border"
         id="boxNome"
@@ -12,6 +22,7 @@
     <div class="form-group" style="text-align: left !important">
       <label for="descBox">Descrizione</label>
       <textarea
+        [(ngModel)]="box.desc"
         class="form-control black-border"
         id="descBox"
         rows="10"
@@ -28,15 +39,26 @@
       type="submit"
       class="btn btn-primary mb-2 box-button black-border"
     >
-      Inserisci
+      Salva modifiche
     </button>
   </div>
   
   <div *ngIf="currentForm == 'vlan'">
     <h2>VLAN</h2>
     <div class="form-group" style="text-align: left !important">
+      
+      <div class="col">
+        <label>Seleziona Vlan da modificare</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+          [(ngModel)]="vlan">
+          <option [ngValue]="vlan" *ngFor="let vlan of switchService.vlan">{{vlan.name}}-{{vlan.number}}</option>
+        </select>
+      </div>
       <label for="vlanNome">Nome vlan</label>
       <input
+        [(ngModel)]="vlan.name"
         type="text"
         class="form-control black-border"
         id="vlanNome"
@@ -46,6 +68,7 @@
     <div class="form-group" style="text-align: left !important">
       <label for="vlanNome">Numero vlan</label>
       <input
+      [(ngModel)]="vlan.number"
         type="number"
         class="form-control black-border"
         id="vlanNome"
@@ -57,6 +80,7 @@
     <div class="form-group" style="text-align: left !important">
       <label for="vlanNome">Colore vlan</label>
       <input
+        [(ngModel)]="vlan.color"
         type="color"
         class="form-control black-border"
         id="vlanNome"
@@ -75,16 +99,26 @@
       type="submit"
       class="btn btn-primary mb-2 box-button black-border"
     >
-      Inserisci
+      Salva modifiche
     </button>
   </div>
   
   <div *ngIf="currentForm == 'porte'">
     <h2>PORTE</h2>
       <div class="row" style="text-align: left !important">
+      <div class="col">
+        <label>Seleziona Tipologia di Porta da modificare</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+          [(ngModel)]="port">
+          <option [ngValue]="port" *ngFor="let port of switchService.porte">{{port.tipo}} - {{port.velocita}}</option>
+        </select>
+      </div>
         <div class="col">
           <label>Tipologia porta</label>
           <select
+            [(ngModel)]="port.tipo"
             class="form-control black-border"
             placeholder="Seleziona tipo cavo"
           >
@@ -95,6 +129,7 @@
         <div class="col">
           <label>Velocità cavo</label>
           <select
+          [(ngModel)]="port.velocita"
             class="form-control black-border"
             placeholder="Seleziona tipo cavo"
           >
@@ -107,7 +142,7 @@
       <div class="row form-group" style="text-align: left !important">
         <div class="col">
           <label>Colore porta</label>
-          <select class="form-control black-border" >
+          <select class="form-control black-border" [(ngModel)]="port.colore">
             <option>Rosso</option>
             <option>Arancione</option>
             <option>Verde</option>
@@ -126,7 +161,7 @@
         Annulla
       </button>
       <button type="submit" class="btn btn-primary mb-2 box-button black-border">
-        Inserisci
+        Salva modifiche
       </button>
   </div>
   
@@ -134,9 +169,20 @@
     <h2>SWITCH</h2>
   
       <div class="row" style="text-align: left !important">
+        
+      <div class="col">
+        <label>Seleziona Switch da modificare</label>
+        <select
+          class="form-control black-border"
+          placeholder="Seleziona tipo cavo"
+          [(ngModel)]="switch">
+          <option [ngValue]="switch" *ngFor="let switch of switchService.switch">{{switch.name}}</option>
+        </select>
+      </div>
         <div class="col center">
           Numero di porte:
           <input
+            [(ngModel)]="switch.ports.length"
             name="nPorte"
             id="nPorte24"
             type="radio"
@@ -145,6 +191,7 @@
           />
           <label id="nPorte24">24</label>
           <input
+          [(ngModel)]="switch.ports.length"
             name="nPorte"
             id="nPorte48"
             type="radio"
@@ -164,6 +211,7 @@
           <div class="form-group" style="text-align: left !important">
             <label for="boxNome">Nome Switch</label>
             <input
+            [(ngModel)]="switch.name"
               type="text"
               class="form-control black-border"
               id="boxNome"
@@ -173,7 +221,7 @@
           <select
             class="form-control black-border"
             id="vlanPorta"
-            name="vlanPorta"
+            name="vlanPorta" [(ngModel)]="switch.box.name"
           >
             <option *ngFor="let box of switchService.box" >
               {{ box.name }}
@@ -192,6 +240,7 @@
             class="form-control black-border"
             id="velocitaPorta"
             name="velocitaPorta"
+            [(ngModel)]="selectedPort.number"
           >
             <option>FastEthernet</option>
             <option>GigaEthernet</option>
@@ -218,7 +267,7 @@
           Annulla
         </button>
         <button type="submit" class="btn btn-primary mb-2 box-button black-border">
-          Inserisci
+          Salva modifiche
         </button>
       </div>
       

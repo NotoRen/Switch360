@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { SwitchService } from '../../services/switch.service';
+import { BoxModel } from '../../models/box-model';
+import { VlanModel } from '../../models/vlan-model';
+import { PortModel } from '../../models/port-model';
+import { porteSwitchModel } from '../../models/porteSwitch-model';
+import { SwitchModel } from '../../models/switch-model';
 
 @Component({
   selector: 'app-content-modifica',
@@ -13,6 +18,13 @@ export class ContentModificaComponent {
     public switchService: SwitchService
   ) {}
   currentForm: string = 'box';
+
+  box:BoxModel=this.switchService.box[0];
+  vlan:VlanModel=this.switchService.vlan[0];
+  port:porteSwitchModel=this.switchService.porte[0];
+  switch:SwitchModel=this.switchService.switch[0];
+
+
 
   ngOnInit() {
     console.log(this.route.params)
