@@ -3,6 +3,7 @@ import { PortModel } from '../../models/port-model';
 import { VlanModel } from '../../models/vlan-model';
 import { SwitchService } from '../../services/switch.service';
 import { BoxModel } from '../../models/box-model';
+import { SwitchModel } from '../../models/switch-model';
 
 @Component({
   selector: 'app-content-visualizza',
@@ -19,6 +20,8 @@ export class ContentVisualizzaComponent {
 
   compresso:BoxModel[]=[]
 
+  compressoSwitch:SwitchModel[]=[]
+
   ngOnInit(){
     console.log(this.switchService.switch)
   }
@@ -28,6 +31,16 @@ export class ContentVisualizzaComponent {
       this.compresso.splice(i,1)
     }else{
       this.compresso.push(e)
+    }
+
+  }
+
+  apriSwitch(e:any){
+    if(this.compressoSwitch.includes(e)){
+      let i=this.compressoSwitch.indexOf(e)
+      this.compressoSwitch.splice(i,1)
+    }else{
+      this.compressoSwitch.push(e)
     }
 
   }

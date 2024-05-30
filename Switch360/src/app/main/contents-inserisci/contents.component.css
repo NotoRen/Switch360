@@ -12,7 +12,7 @@ input[type='radio']{
     margin-right: 5px;
 }
 .selezionato{
-    border:2px solid red;
+    border:2px solid rgb(0, 183, 255);
 }
 td{
     width: 50px;
@@ -51,4 +51,8 @@ i{
 #divButtons{
     margin-top: 2vh;
     padding:5px;
+}
+
+.minibtn{
+    width: 70px !important;
 }

@@ -176,6 +176,7 @@
                 *ngIf="i < 12"
                 (click)="selectPort(i)"
                 [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                [ngStyle]="{backgroundColor:port.speed.colore}"
               >
                 {{ port.number }}
               </td>
@@ -195,6 +196,7 @@
                 *ngIf="i >= 12 && i < 24"
                 (click)="selectPort(i)"
                 [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                [ngStyle]="{backgroundColor:port.speed.colore}"
               >
                 {{ port.number }}
               </td>
@@ -214,6 +216,7 @@
                 *ngIf="i >= 24 && i < 36"
                 (click)="selectPort(i)"
                 [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                [ngStyle]="{backgroundColor:port.speed.colore}"
               >
                 {{ port.number }}
               </td>
@@ -233,6 +236,7 @@
                 *ngIf="i >= 36 && i < 48"
                 (click)="selectPort(i)"
                 [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                [ngStyle]="{backgroundColor:port.speed.colore}"
               >
                 {{ port.number }}
               </td>
@@ -284,10 +288,11 @@
         <select
           class="form-control black-border"
           id="velocitaPorta"
-          [(ngModel)]="selectedPort.speed"
+          [(ngModel)]="selectedPorta"
           name="velocitaPorta"
+          (click)="changePorta()"
         >
-        <option *ngFor="let port of switchService.porte" [ngValue]="selectedPorta">
+        <option *ngFor="let port of switchService.porte" [ngValue]="port">
           {{ port.tipo }} - {{ port.velocita }} - {{ port.colore }} 
         </option>
         </select>
@@ -317,6 +322,12 @@
       </button>
       <button type="submit" class="btn btn-primary mb-2 box-button black-border" (click)="inserisciSwitch()">
         Inserisci
+      </button>
+      <button type="submit" class="btn minibtn box-button black-border" (click)="copiaSwitch()">
+        Copia
+      </button>
+      <button *ngIf="copied" type="submit" class="btn minibtn box-button black-border" (click)="incollaSwitch()">
+        Incolla
       </button>
     </div>
     
