@@ -1,11 +1,8 @@
 <div class="row">
   <div class="col-lg-1" style="padding-left: 0px !important;">
-    <div class="btn-group-vertical">
-      <div *ngFor="let box of switchService.box">
-      
-          <input type="checkbox" id="{{box.name}}" (click)="modificaBox(box)">
-          <label class="fakeButton" for="{{box.name}}" [ngClass]="{'border':box==switchService.box[switchService.box.length-1],'checked':selectedBox.includes(box)}">{{box.name}}</label>
-      </div>
+    <div class="btn-group-vertical" role="group" >
+        <input *ngFor="let box of switchService.box" type="checkbox" class="btn-check" id="{{box.name}}"  autocomplete="off" (click)="modificaBox(box)">
+        <label *ngFor="let box of switchService.box" class="btn btn-outline-primary" for="{{box.name}}" style="margin-bottom: 0;">{{box.name}}</label>
     </div>
   </div>
   <div class="separatore "></div>

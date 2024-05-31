@@ -19,10 +19,12 @@ export class ContentModificaComponent {
   ) {}
   currentForm: string = 'box';
 
-  box:BoxModel=this.switchService.box[0];
-  vlan:VlanModel=this.switchService.vlan[0];
-  port:porteSwitchModel=this.switchService.porte[0];
-  switch:SwitchModel=this.switchService.switch[0];
+  box:BoxModel=new BoxModel(this.switchService.box[0].name, this.switchService.box[0].desc);
+  vlan:VlanModel=new VlanModel(this.switchService.vlan[0].name,this.switchService.vlan[0].color,this.switchService.vlan[0].number);
+  port:porteSwitchModel=new porteSwitchModel(this.switchService.porte[0].tipo,
+    this.switchService.porte[0].velocita, this.switchService.porte[0].colore);
+  switch:SwitchModel=new SwitchModel(this.switchService.switch[0].name,
+    this.switchService.switch[0].ports,this.switchService.switch[0].box)
 
 
 
