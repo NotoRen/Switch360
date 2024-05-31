@@ -27,7 +27,6 @@ export class ContentModificaComponent {
     this.switchService.switch[0].ports,this.switchService.switch[0].box)
 
 
-
   ngOnInit() {
     console.log(this.route.params)
     this.route.params.subscribe((params: Params) => {
