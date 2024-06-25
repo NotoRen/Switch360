@@ -30,8 +30,10 @@ export class ContentVisualizzaComponent {
     if(this.compresso.includes(e)){
       let i=this.compresso.indexOf(e)
       this.compresso.splice(i,1)
+      this.selectedSwitch=[]
     }else{
       this.compresso.push(e)
+      this.selectedSwitch=[]
     }
 
   }
@@ -46,6 +48,7 @@ export class ContentVisualizzaComponent {
 
   }
   modificaBox(e:any){
+    this.selectedSwitch=[];
     if(this.selectedBox.includes(e)){
       let i=this.selectedBox.indexOf(e)
       this.selectedBox.splice(i,1)
@@ -56,6 +59,7 @@ export class ContentVisualizzaComponent {
   }
 
   modificaSwitch(e:any){
+    this.selectedBox=[];
     if(this.selectedSwitch.includes(e)){
       let i=this.selectedSwitch.indexOf(e)
       this.selectedSwitch.splice(i,1)
