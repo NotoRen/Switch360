@@ -3,12 +3,6 @@
 <div class="row">
   <div class="col-sm" style="padding-left: 0px !important;">
     <div class="input-group">
-      <div class="form-outline" data-mdb-input-init>
-        <input type="search" id="form1" class="form-control" placeholder="Cerca" />
-      </div>
-      <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-        <i class="fas fa-search"></i>
-      </button>
       <div class="btn-group-vertical" role="group" >
           <input *ngFor="let box of switchService.box" type="checkbox" class="btn-check" id="{{box.name}}"  autocomplete="off" (click)="modificaBox(box)">
           <label *ngFor="let box of switchService.box" [ngClass]="{'checked':selectedBox.includes(box)}" class="btn btn-outline-dark" for="{{box.name}}" style="margin-bottom: 0;">{{box.name}}</label>
@@ -23,7 +17,7 @@
   <div class="col-lg-8">
     <div class="contenuto">
       <div *ngFor="let box of switchService.box">
-        <div  *ngIf="selectedBox.length==0||selectedBox.includes(box)">
+        <div  *ngIf="selectedBox.length==0||selectedBox.includes(box) ">
         <h1 class="box" (click)="apriBox(box)"><h1>{{box.name}}</h1> <h1 class="freccia" *ngIf="compresso.includes(box)"><i class="bi bi-caret-right-fill"></i> </h1><h1 class="freccia" *ngIf="!compresso.includes(box)"> <i class="bi bi-caret-down-fill"></i> </h1> </h1> 
         <div *ngFor="let switch of switchService.switch">
           <div *ngIf="switch.box.name==box.name&&!compresso.includes(box)&& (selectedSwitch.length==0||selectedSwitch.includes(switch))">
