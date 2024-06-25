@@ -19,12 +19,15 @@ export class ContentModificaComponent {
   ) {}
   currentForm: string = 'box';
 
-  box:BoxModel=new BoxModel(this.switchService.box[0].name, this.switchService.box[0].desc);
-  vlan:VlanModel=new VlanModel(this.switchService.vlan[0].name,this.switchService.vlan[0].color,this.switchService.vlan[0].number);
-  port:porteSwitchModel=new porteSwitchModel(this.switchService.porte[0].tipo,
-    this.switchService.porte[0].velocita, this.switchService.porte[0].colore);
-  switch:SwitchModel=new SwitchModel(this.switchService.switch[0].name,
-    this.switchService.switch[0].ports,this.switchService.switch[0].box)
+  box:BoxModel=this.switchService.box[0]
+  vlan:VlanModel=this.switchService.vlan[0]
+  port:porteSwitchModel=this.switchService.porte[0]
+  switch:SwitchModel=this.switchService.switch[0]
+
+  boxBackup:BoxModel=new BoxModel(this.box.name,this.box.desc)
+  vlanBackup:VlanModel=new VlanModel(this.vlan.name,this.vlan.color,this.vlan.number)
+  portBackup?:porteSwitchModel
+  switchBackup?:SwitchModel
 
 
   ngOnInit() {
@@ -39,5 +42,6 @@ export class ContentModificaComponent {
 
     
   }
+
   
 }

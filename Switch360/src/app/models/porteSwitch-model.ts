@@ -7,4 +7,6 @@ export class porteSwitchModel {
         this.velocita=v;
         this.colore=c
     }
+
+    
 }
