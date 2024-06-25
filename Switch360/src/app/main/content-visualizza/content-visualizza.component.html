@@ -13,6 +13,10 @@
           <input *ngFor="let box of switchService.box" type="checkbox" class="btn-check" id="{{box.name}}"  autocomplete="off" (click)="modificaBox(box)">
           <label *ngFor="let box of switchService.box" class="btn btn-outline-dark" for="{{box.name}}" style="margin-bottom: 0;">{{box.name}}</label>
       </div>
+      <div class="btn-group-vertical" role="group" >
+          <input *ngFor="let switch of switchService.switch" type="checkbox" class="btn-check" id="{{switch.name}}"  autocomplete="off" (click)="modificaSwitch(switch)">
+          <label *ngFor="let switch of switchService.switch" class="btn btn-outline-dark" for="{{switch.name}}" style="margin-bottom: 0;">{{switch.name}}</label>
+      </div>
     </div>
   </div>
   <div class="separatore "></div>
@@ -22,7 +26,7 @@
         <div  *ngIf="selectedBox.length==0||selectedBox.includes(box)">
         <h1 class="box" (click)="apriBox(box)"><h1>{{box.name}}</h1> <h1 class="freccia" *ngIf="compresso.includes(box)"><i class="bi bi-caret-right-fill"></i> </h1><h1 class="freccia" *ngIf="!compresso.includes(box)"> <i class="bi bi-caret-down-fill"></i> </h1> </h1> 
         <div *ngFor="let switch of switchService.switch">
-          <div *ngIf="switch.box.name==box.name&&!compresso.includes(box)">
+          <div *ngIf="switch.box.name==box.name&&!compresso.includes(box)&& (selectedSwitch.length==0||selectedSwitch.includes(switch))">
           <h3 class="minibox" (click)="apriSwitch(switch)">{{ switch.name }} </h3>
           <div class="form-group" style="text-align: left !important; margin-bottom: 0;">
             <div class="col" style="margin: 16px;" *ngIf="!compressoSwitch.includes(switch)">

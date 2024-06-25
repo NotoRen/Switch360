@@ -17,6 +17,7 @@ export class ContentVisualizzaComponent {
   ) {}
 
   selectedBox:BoxModel[]=[]
+  selectedSwitch:SwitchModel[]=[]
 
   compresso:BoxModel[]=[]
 
@@ -50,6 +51,16 @@ export class ContentVisualizzaComponent {
       this.selectedBox.splice(i,1)
     }else{
       this.selectedBox.push(e)
+    }
+
+  }
+
+  modificaSwitch(e:any){
+    if(this.selectedSwitch.includes(e)){
+      let i=this.selectedSwitch.indexOf(e)
+      this.selectedSwitch.splice(i,1)
+    }else{
+      this.selectedSwitch.push(e)
     }
 
   }
