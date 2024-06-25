@@ -1,0 +1,58 @@
+.box-button{
+    width: 33% !important;
+    margin: 5px;
+}
+
+.black-border{
+    border-color: black !important;
+}
+
+input[type='radio']{
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.selezionato{
+    border:2px solid rgb(0, 183, 255);
+}
+td{
+    width: 50px;
+    height: 25px;
+    border: 1px black solid;
+    text-align: center;
+}
+.center{
+    text-align: center !important;
+}
+
+table{
+    margin: auto;
+}
+
+option{
+    font-weight: bolder;
+}
+
+option span{
+    padding: 5px; 
+    border:1px black solid;
+}
+
+select:last-of-type{
+    width: 95%;
+    display: inline-block;
+    float: left;
+    
+}
+
+i{
+    float: right; 
+    font-size: 20pt;
+}
+#divButtons{
+    margin-top: 2vh;
+    padding:5px;
+}
+
+.minibtn{
+    width: 70px !important;
+}

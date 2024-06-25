@@ -203,7 +203,7 @@
         <div class="col center">
           Numero di porte:
           <input
-            [(ngModel)]="switch.ports.length"
+          (click)="portChange(24)"
             name="nPorte"
             id="nPorte24"
             type="radio"
@@ -212,7 +212,7 @@
           />
           <label id="nPorte24">24</label>
           <input
-          [(ngModel)]="switch.ports.length"
+          (click)="portChange(24)"
             name="nPorte"
             id="nPorte48"
             type="radio"
@@ -224,7 +224,88 @@
       <br />
       <div class="row form-group" style="text-align: left !important">
         <div class="col">
-          
+          <table>
+            <tr>
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i < 12"
+                  (click)="selectPort(i)"
+                  [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                  [ngStyle]="{backgroundColor:port.speed.colore}"
+                >
+                  {{ port.number }}
+                </td>
+              </span>
+            </tr>
+            <tr>
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i < 12"
+                  [ngStyle]="{ backgroundColor: port.vlan.color }"
+                ></td>
+              </span>
+            </tr>
+            <tr>
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 12 && i < 24"
+                  (click)="selectPort(i)"
+                  [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                  [ngStyle]="{backgroundColor:port.speed.colore}"
+                >
+                  {{ port.number }}
+                </td>
+              </span>
+            </tr>
+            <tr>
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 12 && i < 24"
+                  [ngStyle]="{ backgroundColor: port.vlan.color }"
+                ></td>
+              </span>
+            </tr>
+            <tr *ngIf="nPort == 48">
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 24 && i < 36"
+                  (click)="selectPort(i)"
+                  [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                  [ngStyle]="{backgroundColor:port.speed.colore}"
+                >
+                  {{ port.number }}
+                </td>
+              </span>
+            </tr>
+            <tr *ngIf="nPort == 48">
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 24 && i < 36"
+                  [ngStyle]="{ backgroundColor: port.vlan.color }"
+                ></td>
+              </span>
+            </tr>
+            <tr *ngIf="nPort == 48">
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 36 && i < 48"
+                  (click)="selectPort(i)"
+                  [ngClass]="{ selezionato: port.number == selectedPort.number }"
+                  [ngStyle]="{backgroundColor:port.speed.colore}"
+                >
+                  {{ port.number }}
+                </td>
+              </span>
+            </tr>
+            <tr *ngIf="nPort == 48">
+              <span *ngFor="let port of ports; index as i">
+                <td
+                  *ngIf="i >= 36 && i < 48"
+                  [ngStyle]="{ backgroundColor: port.vlan.color }"
+                ></td>
+              </span>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="row">
