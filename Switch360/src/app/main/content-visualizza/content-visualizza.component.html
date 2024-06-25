@@ -15,7 +15,7 @@
       </div>
       <div class="btn-group-vertical" role="group" >
           <input *ngFor="let switch of switchService.switch" type="checkbox" class="btn-check" id="{{switch.name}}"  autocomplete="off" (click)="modificaSwitch(switch)">
-          <label *ngFor="let switch of switchService.switch" class="btn btn-outline-dark" for="{{switch.name}}" style="margin-bottom: 0;">{{switch.name}}</label>
+          <label *ngFor="let switch of switchService.switch" [ngClass]="{'checked':selectedSwitch.includes(switch)}" class="btn btn-outline-dark" for="{{switch.name}}" style="margin-bottom: 0;">{{switch.name}}</label>
       </div>
     </div>
   </div>
