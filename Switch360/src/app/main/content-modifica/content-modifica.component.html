@@ -32,6 +32,13 @@
     <button
       type="submit"
       class="btn btn-danger mb-2 box-button black-border"
+      (click)="eliminaBox()"
+    >
+      Elimina
+    </button>
+    <button
+      type="submit"
+      class="btn btn-danger mb-2 box-button black-border"
     >
       Annulla
     </button>
@@ -89,6 +96,13 @@
         placeholder="Inserire nome vlan"
       />
     </div>
+    <button
+      type="submit"
+      class="btn btn-danger mb-2 box-button black-border"
+      (click)="eliminaVlan()"
+    >
+      Elimina
+    </button>
     <button
       type="submit"
       class="btn btn-danger mb-2 box-button black-border"
@@ -157,6 +171,13 @@
           </select>
         </div>
       </div>
+      <button
+      type="submit"
+      class="btn btn-danger mb-2 box-button black-border"
+      (click)="eliminaPorta()"
+    >
+      Elimina
+    </button>
       <button type="submit" class="btn btn-danger mb-2 box-button black-border">
         Annulla
       </button>
@@ -262,6 +283,13 @@
       </div>
       </div>
       <div id="divButtons">
+        <button
+      type="submit"
+      class="btn btn-danger mb-2 box-button black-border"
+      (click)="eliminaSwitch()"
+    >
+      Elimina
+    </button>
         <button type="submit" class="btn btn-danger mb-2 box-button black-border" >
           Annulla
         </button>
