@@ -43,5 +43,22 @@ export class ContentModificaComponent {
     
   }
 
+  eliminaBox(){
+    this.switchService.box.splice(this.switchService.box.indexOf(this.box),1)
+    this.box=this.switchService.box[0]
+  }
+  eliminaVlan(){
+    this.switchService.vlan.splice(this.switchService.vlan.indexOf(this.vlan),1)
+    this.vlan=this.switchService.vlan[0]
+  }
+  eliminaPorta(){
+    this.switchService.porte.splice(this.switchService.porte.indexOf(this.port),1)
+    this.port=this.switchService.porte[0]
+  }
+  eliminaSwitch(){
+    this.switchService.switch.splice(this.switchService.switch.indexOf(this.switch),1)
+    this.switch=this.switchService.switch[0]
+  }
+
   
 }
