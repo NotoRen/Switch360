@@ -90,6 +90,7 @@ input[type='checkbox']{
 
 .checked{
     background-color: #17a2b8;
+    border-top: 1px black solid !important;
 }
 
 .box{
